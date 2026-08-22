@@ -39,74 +39,9 @@ export const viewport: Viewport = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Audlect",
-    url: baseUrl,
-    logo: `${baseUrl}/app-logo.svg`,
-    description: "Collaborative music voting for events, parties, and venues.",
-    sameAs: ["https://github.com/nicode3141", "https://x.com/nicode3141"],
-  };
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Audlect",
-    url: baseUrl,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${baseUrl}/voting?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
-  };
-
-  const softwareAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "Audlect",
-    url: baseUrl,
-    description:
-      "Collaborative music voting app for events, parties, and venues. Guests vote songs into a shared playlist in real time.",
-    applicationCategory: "MultimediaApplication",
-    operatingSystem: "Web",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-    },
-    screenshot: `${baseUrl}/images/landing/product-shot.png`,
-    featureList: [
-      "Real-time song voting",
-      "Custom voting deadlines",
-      "Shared event playlists",
-      "Song preview playback",
-    ],
-  };
-
   return (
     <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(softwareAppSchema),
-          }}
-        />
-
         <link rel="manifest" href="/manifest.json" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
