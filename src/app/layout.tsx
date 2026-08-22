@@ -52,7 +52,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${interFont.variable} ${montserratFont.variable} ${nunitoFont.variable} antialiase min-h-screen
-					bg-white font-inter dark:bg-[#161616] selection:bg-black selection:text-white `}
+					bg-white font-inter dark:bg-[#161616] selection:bg-neutral-800 selection:text-white `}
       >
         {children}
       </body>
