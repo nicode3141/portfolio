@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Projects from "./features/home/Projects";
 
 export default function Home() {
@@ -15,6 +16,20 @@ export default function Home() {
         </div>
       </div>
       <Projects />
+      <div className="flex items-center justify-center">
+        <Link
+          className="flex items-center gap-3 font-inter font-semibold text-neutral-600 hover:text-black"
+          href="https://github.com/nicode3141"
+        >
+          <img
+            src={"/github.svg"}
+            alt="github icon"
+            width={30}
+            height={30}
+          ></img>
+          nicode3141
+        </Link>
+      </div>
     </div>
   );
 }
